@@ -1,0 +1,51 @@
+# Unity'nin kendisi yeniden ürettiği klasörler
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Build'ler (exe GitHub Releases'e zip olarak konuyor)
+/[Bb]uild/
+/[Bb]uilds/
+*.apk
+*.aab
+*.unitypackage
+
+# Visual Studio / Rider / IDE dosyaları (Unity yeniden üretir)
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity çökme / önbellek dosyaları
+sysinfo.txt
+crashlytics-build.properties
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Kişisel / geliştirme klasörleri (oyunun çalışması için gerekmez)
+/Yedekler/
+/Araclar/
+CLAUDE.md
