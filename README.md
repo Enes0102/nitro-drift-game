@@ -103,3 +103,4 @@ Menüde: Enter / Space başla, G garaj, Tab ayarlar, I istatistikler.
 - Unity Hub → **Add project from disk** → bu klasörü seç.
 - `Assets/Scenes/SampleScene.unity` sahnesini açıp **Play**'e bas.
 - Windows build'i için üst menüden **Yarış → Windows için Build Al**.
+asdasdasd
