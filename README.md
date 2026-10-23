@@ -14,6 +14,8 @@ no ready-made models, textures or sound files were used.
 
 ### Download and play (Windows)
 
+**▶ Also on itch.io: [cannes035.itch.io/nitro-drift](https://cannes035.itch.io/nitro-drift)**
+
 1. Download the latest `.zip` from the **Releases** section on the right.
 2. Extract the zip into a folder (right click → Extract All).
 3. Run `NitroDrift.exe`.
@@ -65,6 +67,8 @@ Oyundaki her şey (arabalar, yol, ağaçlar, dağlar, efektler, motor sesleri, m
 dışarıdan hazır model, doku ya da ses dosyası kullanılmadı.
 
 ### İndir ve oyna (Windows)
+
+**▶ itch.io'da da var: [cannes035.itch.io/nitro-drift](https://cannes035.itch.io/nitro-drift)**
 
 1. Sağdaki **Releases** bölümünden son sürümün `.zip` dosyasını indir.
 2. Zip'i bir klasöre çıkar (sağ tık → Tümünü ayıkla).
