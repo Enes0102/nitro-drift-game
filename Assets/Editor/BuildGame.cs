@@ -5,19 +5,31 @@ using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-// Üst menüde "Yarış → Windows için Build Al".
+// Üst menüde "Yarış → Windows için Build Al" ve "Yarış → Linux için Build Al".
 // Oyun kodla Shader.Find ve EnableKeyword("_EMISSION") kullanıyor; build'de bu shader'lar/varyantlar
 // hiçbir malzemede geçmediği için atılabilir (pembe ya da parlamayan nesneler). Bunu önlemek için
 // build'den önce Assets/Resources/BuildShaders içine aynı ayarlarla örnek malzemeler kaydedilir
-// (Resources her zaman build'e girer). Sonra Windows 64-bit build tarihli yeni bir klasöre alınır ve klasör açılır.
+// (Resources her zaman build'e girer). Sonra 64-bit build tarihli yeni bir klasöre alınır ve klasör açılır.
 public static class BuildGame
 {
-    const string ExeName = "NitroDrift.exe";
     const string MatDir = "Assets/Resources/BuildShaders";
 
     [MenuItem("Yarış/Windows için Build Al")]
-    public static void BuildWindows()
+    public static void BuildWindows() => Build(BuildTarget.StandaloneWindows64, "NitroDrift", "NitroDrift.exe");
+
+    // Linux: Unity Hub'dan "Linux Build Support (Mono)" modülü kurulu olmalı.
+    // Zip'le taşınınca çalıştırma izni kaybolabilir: Linux'ta bir kez "chmod +x NitroDrift.x86_64".
+    [MenuItem("Yarış/Linux için Build Al")]
+    public static void BuildLinux() => Build(BuildTarget.StandaloneLinux64, "NitroDrift_Linux", "NitroDrift.x86_64");
+
+    static void Build(BuildTarget target, string folderPrefix, string exeName)
     {
+        if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.Standalone, target))
+        {
+            EditorUtility.DisplayDialog("Modül eksik", target + " için build modülü kurulu değil.\n" +
+                "Unity Hub → Installs → 6000.6.6f1 → Add modules ile kur, sonra Unity'yi yeniden aç.", "Tamam");
+            return;
+        }
         EnsureShaderMaterials();
         SetIcon();
         // Bitmiş sürüm; Unity'nin açılış logosu kapalı (oyunun kendi logosu var: SplashLogo).
@@ -29,13 +41,13 @@ public static class BuildGame
         if (scenes.Length == 0) scenes = new[] { "Assets/Scenes/SampleScene.unity" };
 
         // Her build kendi tarihli klasörüne: eski build'ler silinmez (Builds/NitroDrift_2026-10-19_23-40)
-        string outDir = $"Builds/NitroDrift_{System.DateTime.Now:yyyy-MM-dd_HH-mm}";
-        string path = Path.Combine(outDir, ExeName);
+        string outDir = $"Builds/{folderPrefix}_{System.DateTime.Now:yyyy-MM-dd_HH-mm}";
+        string path = Path.Combine(outDir, exeName);
         var opts = new BuildPlayerOptions
         {
             scenes = scenes,
             locationPathName = path,
-            target = BuildTarget.StandaloneWindows64,
+            target = target,
             options = BuildOptions.None,
         };
         BuildReport report = BuildPipeline.BuildPlayer(opts);
