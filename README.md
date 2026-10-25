@@ -17,6 +17,12 @@ Everything in the game — cars, road, scenery, effects, engine sounds and music
 
 Get as far as you can before time runs out: drift, burn nitro, weave through traffic and beat your record. Checkpoint gates add time, drift chains build your combo, and traffic gets denser the longer you survive.
 
+## Why I Built This
+
+Nitro Drift is my first finished Unity game. I built it to learn game development in Unity: vehicle physics, procedural generation, audio synthesis and building a complete game loop from menu to game over.
+
+I used AI tools during development to speed things up, explain Unity concepts and help track down bugs. The game design, testing, tuning and decisions about how the game should look and feel were mine.
+
 ## Controls
 
 | Key | Action |
