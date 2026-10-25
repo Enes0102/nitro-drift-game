@@ -17,6 +17,12 @@ Oyundaki her şey (arabalar, yol, manzara, efektler, motor sesleri ve müzik) ko
 
 Süre bitmeden olabildiğince uzağa git: drift at, nitro yak, trafiğin arasından makas at ve rekorunu kır. Kontrol noktası kapıları süre ekler, drift zincirleri komboyu büyütür, hayatta kaldıkça trafik de kalabalıklaşır.
 
+## Neden Yaptım
+
+Nitro Drift, bitirdiğim ilk Unity oyunu. Unity'de oyun geliştirmeyi öğrenmek için yaptım: araç fiziği, prosedürel üretim, ses sentezi ve menüden oyun sonuna kadar eksiksiz bir oyun döngüsü kurmak.
+
+Geliştirme sırasında işleri hızlandırmak, Unity kavramlarını anlamak ve hataları bulmak için yapay zekâ araçlarından yararlandım. Oyun tasarımı, testler, ince ayarlar ve oyunun nasıl görünüp hissettireceğine dair kararlar bana ait.
+
 ## Kontroller
 
 | Tuş | İşlev |
